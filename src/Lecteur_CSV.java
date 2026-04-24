@@ -9,7 +9,7 @@ public class Lecteur_CSV {
         this.cheminFichier = cheminFichier;
     }
 
-    public String[] lireEntetes() throws IOException {
+    public String[] lireEntetes() throws FileNotFoundException, IOException {
         try (BufferedReader lecteur = new BufferedReader(new FileReader(cheminFichier))) {
             String ligne = lecteur.readLine();
             if (ligne == null || ligne.trim().isEmpty())
@@ -18,7 +18,7 @@ public class Lecteur_CSV {
         }
     }
 
-    public List<String[]> lireDonnees() throws IOException {
+    public List<String[]> lireDonnees() throws FileNotFoundException, IOException {
         List<String[]> donnees = new ArrayList<>();
         try (BufferedReader lecteur = new BufferedReader(new FileReader(cheminFichier))) {
             lecteur.readLine(); // sauter l'en-tête
