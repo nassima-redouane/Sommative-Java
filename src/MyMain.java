@@ -35,7 +35,7 @@ public class MyMain {
             }
 
             // Analyser les données
-            Statistique_CSV statistiques = new Statistique_CSV(entetes, donnees);
+            Statistique_CSV statistiques = new Statistique_CSV(entetes);
 
             statistiques.analyser(donnees);
 
