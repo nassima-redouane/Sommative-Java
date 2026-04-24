@@ -8,7 +8,7 @@ public class Statistique_CSV implements Interface_analyser {
     private double[] maxs;
     private int nbColonnes;
 
-    // Reçoit les données brutes en paramètre
+    // Reçoit les entetes en paramètre
     public Statistique_CSV(String[] entetes) {
         this.nomsColonnes = entetes;
         this.nbColonnes = entetes.length;
