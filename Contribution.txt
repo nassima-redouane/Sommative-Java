@@ -1,0 +1,53 @@
+================================================
+        CONTRIBUTIONS - Projet Analyse CSV
+================================================
+Mode de travail : Travail individuel
+
+Membre : Nassima Redouane
+
+------------------------------------------------
+FONCTIONNALITÉS RÉALISÉES
+------------------------------------------------
+
+1. Interface Interface_analyser.java
+   - Définition du contrat d'analyse
+   - Déclaration de la méthode analyser(List<String[]> donnees)
+
+2. Classe Lecteur_CSV.java
+   - Lecture du fichier CSV avec BufferedReader
+   - Extraction des noms de colonnes (première ligne)
+   - Retour des données brutes sous forme de List<String[]>
+   - Gestion des exceptions (fichier vide, introuvable)
+
+3. Classe Statistique_CSV.java
+   - Calcul de la moyenne, minimum et maximum par colonne
+   - Gestion des lignes incomplètes et valeurs non numériques
+   - Implémente Interface_analyser
+
+4. Classe Afficher.java
+   - Affichage des résultats formatés dans la console
+   - Vérification que les données sont disponibles avant affichage
+
+5. Classe Exporter_CSV.java
+   - Export des statistiques dans un fichier CSV
+   - Utilisation de try-with-resources pour la fermeture automatique
+   - Gestion des exceptions lors de l'écriture du fichier
+
+6. Classe MyMain.java
+   - Point d'entrée du programme
+   - Interaction avec l'utilisateur (saisie du chemin)
+   - Orchestration de la lecture, analyse, affichage et export
+   - Gestion globale des exceptions
+
+------------------------------------------------
+PRINCIPES SOLID APPLIQUÉS
+------------------------------------------------
+
+- SRP : chaque classe a une seule responsabilité
+        (lecture, calcul, affichage, export séparés)
+- OCP : ajout possible de nouveaux analyseurs
+        sans modifier le code existant
+- LSP : Statistique_CSV respecte le contrat de Interface_analyser
+- ISP : interface séparée uniquement pour l'analyse
+
+================================================
